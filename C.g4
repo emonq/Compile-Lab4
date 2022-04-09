@@ -633,7 +633,8 @@ S_CHAR_SEQUENCE
 
 fragment
 S_CHAR
-    : C_CHAR
+    : ~["\\\n]
+    | ESCAPE_SEQUENCE
     ;
 
 NEWLINE : '\r'?'\n' -> skip;
